@@ -8,6 +8,7 @@
 GitHub actions to assign author to issue or PR.  
 
 ## Screenshot
+![GitHub Action](https://raw.githubusercontent.com/technote-space/assign-author/images/screenshot.gif)
 
 ## Installation
 1. Setup workflow  
