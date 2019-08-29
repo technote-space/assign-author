@@ -11,8 +11,7 @@
   "homepage": "https://github.com/technote-space/assign-author",
   "repository": {
     "type": "git",
-    "url": "https://github.com/technote-space/assign-author.git",
-    "directory": "automations/assign-author"
+    "url": "https://github.com/technote-space/assign-author.git"
   },
   "bugs": {
     "url": "https://github.com/technote-space/assign-author/issues"
