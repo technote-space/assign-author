@@ -1,0 +1,34 @@
+on: pull_request
+name: Pull Request opened
+jobs:
+  assignToProject:
+    name: Assign PullRequest to Project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign PullRequest to Project
+        if: github.event.action == 'opened'
+        uses: alex-page/add-new-pulls-project@master
+        with:
+          args: "Backlog \"To do\""
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  assign:
+    name: Auto Assign
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto Assign
+        if: github.event.action == 'opened'
+        uses: platanus/auto-assign@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  addLabelsByBranch:
+    name: PR Labeler
+    runs-on: ubuntu-latest
+    steps:
+      - name: PR Labeler
+        if: github.event.action == 'opened'
+        uses: technote-fork/pr-labeler-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
