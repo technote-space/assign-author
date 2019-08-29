@@ -43,11 +43,9 @@ GitHub actions to assign author to issue or PR.
    ```
 
 ## Action event details
-### Target event
-- pull_request
-- issues
-### Target action
-- opened
+### Target events
+- pull_request: opened
+- issues: opened
 
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
