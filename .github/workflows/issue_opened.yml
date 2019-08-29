@@ -1,0 +1,14 @@
+on: issues
+name: Issue opened
+jobs:
+  assign:
+    name: Assign issues to project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign issues to project
+        if: github.event.action == 'opened'
+        uses: alex-page/add-new-issue-project@master
+        with:
+          args: "Backlog \"To do\""
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
