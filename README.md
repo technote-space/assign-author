@@ -17,10 +17,10 @@ GitHub actions to assign author to issue or PR.
    name: Pull Request
    jobs:
      assignAuthor:
-       name: Assign Author to PR
+       name: Assign author to PR
        runs-on: ubuntu-latest
        steps:
-         - name: Assign Author to PR
+         - name: Assign author to PR
            if: github.event.action == 'opened'
            uses: technote-space/assign-author@v1
            with:
@@ -32,10 +32,10 @@ GitHub actions to assign author to issue or PR.
    name: Issues
    jobs:
      assignAuthor:
-       name: Assign Author to issue
+       name: Assign author to issue
        runs-on: ubuntu-latest
        steps:
-         - name: Assign Author to issue
+         - name: Assign author to issue
            if: github.event.action == 'opened'
            uses: technote-space/assign-author@v1
            with:
