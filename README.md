@@ -7,8 +7,17 @@
 
 GitHub actions to assign author to issue or PR.  
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Screenshot](#screenshot)
+- [Installation](#installation)
+- [Action event details](#action-event-details)
+  - [Target events](#target-events)
+- [Author](#author)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Screenshot
 ![GitHub Action](https://raw.githubusercontent.com/technote-space/assign-author/images/screenshot.gif)
