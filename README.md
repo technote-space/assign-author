@@ -7,7 +7,20 @@
 
 GitHub actions to assign author to issue or PR.  
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Screenshot](#screenshot)
+- [Installation](#installation)
+- [Action event details](#action-event-details)
+  - [Target events](#target-events)
+- [Author](#author)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Screenshot
+![GitHub Action](https://raw.githubusercontent.com/technote-space/assign-author/images/screenshot.gif)
 
 ## Installation
 1. Setup workflow  
@@ -17,10 +30,10 @@ GitHub actions to assign author to issue or PR.
    name: Pull Request
    jobs:
      assignAuthor:
-       name: Assign Author to PR
+       name: Assign author to PR
        runs-on: ubuntu-latest
        steps:
-         - name: Assign Author to PR
+         - name: Assign author to PR
            if: github.event.action == 'opened'
            uses: technote-space/assign-author@v1
            with:
@@ -32,10 +45,10 @@ GitHub actions to assign author to issue or PR.
    name: Issues
    jobs:
      assignAuthor:
-       name: Assign Author to issue
+       name: Assign author to issue
        runs-on: ubuntu-latest
        steps:
-         - name: Assign Author to issue
+         - name: Assign author to issue
            if: github.event.action == 'opened'
            uses: technote-space/assign-author@v1
            with:
