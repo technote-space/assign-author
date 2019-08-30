@@ -7,6 +7,9 @@
 
 GitHub actions to assign author to issue or PR.  
 
+<!-- START doctoc -->
+<!-- END doctoc -->
+
 ## Screenshot
 ![GitHub Action](https://raw.githubusercontent.com/technote-space/assign-author/images/screenshot.gif)
 
