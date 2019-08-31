@@ -9,12 +9,13 @@ GitHub actions to assign author to issue or PR.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
+**Table of Contents**
 
 - [Screenshot](#screenshot)
 - [Installation](#installation)
 - [Action event details](#action-event-details)
   - [Target events](#target-events)
+- [GitHub Actions using this Action](#github-actions-using-this-action)
 - [Author](#author)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -59,6 +60,12 @@ GitHub actions to assign author to issue or PR.
 ### Target events
 - pull_request: opened
 - issues: opened
+
+## GitHub Actions using this Action
+- [Assign Author](https://github.com/technote-space/assign-author)
+- [TOC Generator](https://github.com/technote-space/toc-generator)
+- [Release GitHub Actions](https://github.com/technote-space/release-github-actions)
+- [Auto card labeler](https://github.com/technote-space/auto-card-labeler)
 
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
