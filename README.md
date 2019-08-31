@@ -9,12 +9,13 @@ GitHub actions to assign author to issue or PR.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
+**Table of Contents**
 
 - [Screenshot](#screenshot)
 - [Installation](#installation)
 - [Action event details](#action-event-details)
   - [Target events](#target-events)
+- [GitHub Actions using this Action](#github-actions-using-this-action)
 - [Author](#author)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
