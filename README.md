@@ -60,6 +60,12 @@ GitHub actions to assign author to issue or PR.
 - pull_request: opened
 - issues: opened
 
+## GitHub Actions using this Action
+- [Assign Author](https://github.com/technote-space/assign-author)
+- [TOC Generator](https://github.com/technote-space/toc-generator)
+- [Release GitHub Actions](https://github.com/technote-space/release-github-actions)
+- [Auto card labeler](https://github.com/technote-space/auto-card-labeler)
+
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
 [Blog](https://technote.space)
