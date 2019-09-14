@@ -14,15 +14,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node_version: [10, 11, 12]
+        node: ['8', '10', '11', '12']
     steps:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 3
-      - name: Use Node.js ${{ matrix.node_version }}
+      - name: Setup node
         uses: actions/setup-node@v1
         with:
-          version: ${{ matrix.node_version }}
+          node-version: ${{ matrix.node }}
       - name: Install Package dependencies
         run: yarn install
       - name: Run tests
