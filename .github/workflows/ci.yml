@@ -12,10 +12,17 @@ jobs:
   jest:
     name: Jest
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['8', '10', '11', '12']
     steps:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 3
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
       - name: Install Package dependencies
         run: yarn install
       - name: Run tests
