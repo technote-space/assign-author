@@ -27,14 +27,11 @@ jobs:
         run: yarn install
       - name: Run tests
         run: yarn cover
-      - name: Send covarage
-        run: yarn add coveralls && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
-          COVERALLS_SERVICE_NAME: "GitHub Action"
-          COVERALLS_SERVICE_JOB_ID: ${{ github.sha }}
-          COVERALLS_GIT_COMMIT: ${{ github.sha }}
-          COVERALLS_GIT_BRANCH: ${{ github.ref }}
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.github_token }}
+          parallel: true
       - uses: 8398a7/action-slack@v1
         with:
           type: failure
@@ -42,10 +39,26 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         if: failure()
+
+  coverallsFinished:
+    name: Coveralls Finished
+    needs: jest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Coveralls Finished
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.github_token }}
+          parallel-finished: true
+
+  slack:
+    name: Slack
+    needs: coverallsFinished
+    runs-on: ubuntu-latest
+    steps:
       - uses: 8398a7/action-slack@v1
         with:
           type: success
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        if: success()
