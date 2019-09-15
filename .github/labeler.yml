@@ -2,9 +2,8 @@ javascript:
   - '**/*.js'
 typescript:
   - '**/*.ts'
-dependencies:
-  - '**/*.lock'
-  - '**/*-lock.json'
+php:
+  - '**/*.php'
 
 'Type: Testing':
   - '**/tests/*'

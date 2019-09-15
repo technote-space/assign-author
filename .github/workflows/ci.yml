@@ -30,6 +30,7 @@ jobs:
 
   jest:
     name: Jest
+    needs: eslint
     runs-on: ubuntu-latest
     strategy:
       matrix:
