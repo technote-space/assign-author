@@ -1,6 +1,5 @@
 import { Context } from '@actions/github/lib/context';
-
-const getSender = (context: Context): string | false => context.payload.sender && context.payload.sender.type === 'User' ? context.payload.sender.login : false;
+import { Utils } from '@technote-space/github-action-helper';
 
 const getCurrentAssignees = (context: Context): string[] | false => {
 	if ('issues' === context.eventName) {
@@ -13,7 +12,7 @@ const getCurrentAssignees = (context: Context): string[] | false => {
 };
 
 export const getAssignees = (context: Context): string[] | false => {
-	const sender = getSender(context);
+	const sender = Utils.getSender(context);
 	if (false === sender) {
 		return false;
 	}

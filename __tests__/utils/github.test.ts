@@ -1,11 +1,15 @@
 /* eslint-disable no-magic-numbers */
 import nock from 'nock';
+import path from 'path';
 import { GitHub } from '@actions/github' ;
+import { Logger } from '@technote-space/github-action-helper';
+import { disableNetConnect, getApiFixture, getContext, spyOnStdout, stdoutCalledWith } from '@technote-space/github-action-test-helper';
 import { addAssignees } from '../../src/utils/github';
-import { disableNetConnect, getApiFixture, getContext } from '../util';
 
 describe('addAssignees', () => {
 	disableNetConnect(nock);
+
+	const logger = new Logger();
 
 	it('should do nothing 1', async() => {
 		const fn = jest.fn();
@@ -16,7 +20,7 @@ describe('addAssignees', () => {
 				return body;
 			});
 
-		await addAssignees(false, new GitHub(''), getContext({
+		await addAssignees(false, new GitHub(''), logger, getContext({
 			repo: {
 				owner: 'hello',
 				repo: 'world',
@@ -35,7 +39,7 @@ describe('addAssignees', () => {
 				return body;
 			});
 
-		await addAssignees([], new GitHub(''), getContext({
+		await addAssignees([], new GitHub(''), logger, getContext({
 			repo: {
 				owner: 'hello',
 				repo: 'world',
@@ -48,6 +52,7 @@ describe('addAssignees', () => {
 	it('should do nothing 3', async() => {
 		const fn1 = jest.fn();
 		const fn2 = jest.fn();
+		const mockStdout = spyOnStdout();
 		nock('https://api.github.com')
 			.post('/repos/hello/world/issues/1/assignees', body => {
 				fn1();
@@ -57,13 +62,12 @@ describe('addAssignees', () => {
 			})
 			.reply(403, () => {
 				fn2();
-				return getApiFixture('repos.issues.assignees.403');
+				return getApiFixture(path.resolve(__dirname, '..', 'fixtures'), 'repos.issues.assignees.403');
 			});
-		const warnCount = global.mockSignale.warn.mock.calls.length;
 
 		await addAssignees([
 			'test',
-		], new GitHub(''), getContext({
+		], new GitHub(''), logger, getContext({
 			repo: {
 				owner: 'hello',
 				repo: 'world',
@@ -72,11 +76,16 @@ describe('addAssignees', () => {
 
 		expect(fn1).toBeCalledTimes(1);
 		expect(fn2).toBeCalledTimes(1);
-		expect(global.mockSignale.warn.mock.calls.length).toBe(warnCount + 1);
+		stdoutCalledWith(mockStdout, [
+			'> Adding assignees',
+			'> test',
+			'::warning::Resource not accessible by integration',
+		]);
 	});
 
 	it('should do nothing 4', async() => {
 		const fn = jest.fn();
+		const mockStdout = spyOnStdout();
 		nock('https://api.github.com')
 			.post('/repos/hello/world/issues/1/assignees', body => {
 				fn();
@@ -87,11 +96,10 @@ describe('addAssignees', () => {
 			.reply(500, () => {
 				throw new Error('test');
 			});
-		const warnCount = global.mockSignale.warn.mock.calls.length;
 
 		await expect(addAssignees([
 			'test',
-		], new GitHub(''), getContext({
+		], new GitHub(''), logger, getContext({
 			repo: {
 				owner: 'hello',
 				repo: 'world',
@@ -99,7 +107,10 @@ describe('addAssignees', () => {
 		}))).rejects.toThrow(new Error('test'));
 
 		expect(fn).toBeCalledTimes(1);
-		expect(global.mockSignale.warn.mock.calls.length).toBe(warnCount);
+		stdoutCalledWith(mockStdout, [
+			'> Adding assignees',
+			'> test',
+		]);
 	});
 
 	it('should add assignees', async() => {
@@ -114,12 +125,12 @@ describe('addAssignees', () => {
 			})
 			.reply(201, () => {
 				fn2();
-				return getApiFixture('repos.issues.assignees');
+				return getApiFixture(path.resolve(__dirname, '..', 'fixtures'), 'repos.issues.assignees');
 			});
 
 		await addAssignees([
 			'test',
-		], new GitHub(''), getContext({
+		], new GitHub(''), logger, getContext({
 			repo: {
 				owner: 'hello',
 				repo: 'world',

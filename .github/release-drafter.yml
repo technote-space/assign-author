@@ -6,6 +6,7 @@ categories:
     labels:
       - 'Type: Feature'
       - 'Type: Refactoring'
+      - 'Type: CI/CD'
   - title: ':bug: Bug Fixes'
     labels:
       - 'Type: Bug'

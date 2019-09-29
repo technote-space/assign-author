@@ -1,58 +1,26 @@
 /* eslint-disable no-magic-numbers */
-import path from 'path';
-import { getContext } from '../util';
-import {
-	isTargetEvent,
-	getBuildVersion,
-} from '../../src/utils/misc';
+import { generateContext } from '@technote-space/github-action-test-helper';
+import { isTargetEvent } from '@technote-space/filter-github-action';
+import { TARGET_EVENTS } from '../../src/constant';
 
 describe('isTargetEvent', () => {
 	it('should return true 1', () => {
-		expect(isTargetEvent(getContext({
-			payload: {
-				action: 'opened',
-			},
-			eventName: 'issues',
-		}))).toBeTruthy();
+		expect(isTargetEvent(TARGET_EVENTS, generateContext({event: 'issues', action: 'opened'}))).toBeTruthy();
 	});
+
 	it('should return true 2', () => {
-		expect(isTargetEvent(getContext({
-			payload: {
-				action: 'opened',
-			},
-			eventName: 'pull_request',
-		}))).toBeTruthy();
+		expect(isTargetEvent(TARGET_EVENTS, generateContext({event: 'pull_request', action: 'opened'}))).toBeTruthy();
+	});
+
+	it('should return true 3', () => {
+		expect(isTargetEvent(TARGET_EVENTS, generateContext({event: 'pull_request', action: 'rerequested'}))).toBeTruthy();
 	});
 
 	it('should return false 1', () => {
-		expect(isTargetEvent(getContext({
-			payload: {
-				action: 'opened',
-			},
-			eventName: 'push',
-		}))).toBeFalsy();
+		expect(isTargetEvent(TARGET_EVENTS, generateContext({event: 'push', action: 'opened'}))).toBeFalsy();
 	});
 
 	it('should return false 2', () => {
-		expect(isTargetEvent(getContext({
-			payload: {
-				action: 'closed',
-			},
-			eventName: 'issues',
-		}))).toBeFalsy();
-	});
-});
-
-describe('getBuildVersion', () => {
-	it('should get build version', () => {
-		expect(getBuildVersion(path.resolve(__dirname, '..', 'fixtures', 'build1.json'))).toBe('v1.2.3');
-	});
-
-	it('should return false 1', () => {
-		expect(getBuildVersion(path.resolve(__dirname, '..', 'fixtures', 'build2.json'))).toBeFalsy();
-	});
-
-	it('should return false 2', () => {
-		expect(getBuildVersion(path.resolve(__dirname, '..', 'fixtures', 'build.test.json'))).toBeFalsy();
+		expect(isTargetEvent(TARGET_EVENTS, generateContext({event: 'issues', action: 'closed'}))).toBeFalsy();
 	});
 });
