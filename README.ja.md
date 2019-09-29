@@ -1,7 +1,7 @@
 # Assign Author
 
 [![Build Status](https://github.com/technote-space/assign-author/workflows/Build/badge.svg)](https://github.com/technote-space/assign-author/actions)
-[![Coverage Status](https://coveralls.io/repos/github/technote-space/assign-author/badge.svg?branch=master)](https://coveralls.io/github/technote-space/assign-author?branch=master)
+[![codecov](https://codecov.io/gh/technote-space/assign-author/branch/master/graph/badge.svg)](https://codecov.io/gh/technote-space/assign-author)
 [![CodeFactor](https://www.codefactor.io/repository/github/technote-space/assign-author/badge)](https://www.codefactor.io/repository/github/technote-space/assign-author)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-space/assign-author/blob/master/LICENSE)
 
