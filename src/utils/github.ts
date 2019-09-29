@@ -12,6 +12,7 @@ export const addAssignees = async(assignees: string[] | false, octokit: GitHub, 
 	logger.info(assignees);
 
 	if (!assignees.length) {
+		logger.info('do nothing...');
 		return;
 	}
 
