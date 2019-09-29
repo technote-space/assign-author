@@ -1,7 +1,7 @@
 on: push
 name: TOC Generator
 jobs:
-  assignAuthor:
+  toc:
     name: TOC Generator
     runs-on: ubuntu-latest
     steps:
@@ -9,3 +9,4 @@ jobs:
         uses: technote-space/toc-generator@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_PATHS: 'README.md,README.ja.md'
