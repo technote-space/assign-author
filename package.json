@@ -1,12 +1,13 @@
 {
-  "name": "@technote/assign-author",
+  "name": "@technote-space/assign-author",
   "version": "0.0.1",
   "description": "GitHub actions to assign author to issue or PR.",
   "author": "Technote <technote.space@gmail.com> (https://technote.space)",
   "license": "MIT",
   "keywords": [
     "github",
-    "github actions"
+    "github actions",
+    "assignees"
   ],
   "homepage": "https://github.com/technote-space/assign-author",
   "repository": {
@@ -20,14 +21,16 @@
   "dependencies": {
     "@actions/core": "^1.1.1",
     "@actions/github": "^1.1.0",
-    "signale": "^1.4.0"
+    "@technote-space/filter-github-action": "^0.1.1",
+    "@technote-space/github-action-helper": "^0.1.6"
   },
   "devDependencies": {
+    "@technote-space/github-action-test-helper": "^0.0.10",
     "@types/jest": "^24.0.18",
-    "@types/node": "^12.7.5",
-    "@typescript-eslint/eslint-plugin": "^2.3.0",
-    "@typescript-eslint/parser": "^2.3.0",
-    "eslint": "^6.4.0",
+    "@types/node": "^12.7.8",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
+    "eslint": "^6.5.0",
     "jest": "^24.9.0",
     "jest-circus": "^24.9.0",
     "nock": "^11.3.5",
@@ -41,6 +44,7 @@
     "build": "tsc",
     "test": "yarn lint && yarn cover",
     "lint": "eslint src/**/**/*.ts && eslint __tests__/**/**/*.ts",
-    "cover": "jest --coverage"
+    "cover": "jest --coverage",
+    "update": "ncu -u && yarn install && yarn upgrade && yarn audit"
   }
 }
