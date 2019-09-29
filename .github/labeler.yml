@@ -12,3 +12,8 @@ php:
 
 'Type: Documentation':
   - '**/*.md'
+
+'Type: CI/CD':
+  - '.github/workflows/*.yml'
+  - '.circleci/*'
+  - '.travis.yml'
