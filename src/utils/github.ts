@@ -1,16 +1,15 @@
-import signale from 'signale';
 import { GitHub } from '@actions/github/lib/github';
 import { Context } from '@actions/github/lib/context';
+import { Logger } from '@technote-space/github-action-helper';
 
-export const addAssignees = async(assignees: string[] | false, octokit: GitHub, context: Context): Promise<void> => {
+export const addAssignees = async(assignees: string[] | false, octokit: GitHub, logger: Logger, context: Context): Promise<void> => {
 	if (false === assignees) {
-		signale.warn('Invalid target.');
-		signale.info(context.issue);
+		logger.warn('Invalid target.');
 		return;
 	}
 
-	signale.info('Adding assignees');
-	signale.info(assignees);
+	logger.info('Adding assignees');
+	logger.info(assignees);
 
 	if (!assignees.length) {
 		return;
@@ -25,7 +24,7 @@ export const addAssignees = async(assignees: string[] | false, octokit: GitHub, 
 		});
 	} catch (error) {
 		if ('Resource not accessible by integration' === error.message) {
-			signale.warn(error.message);
+			logger.warn(error.message);
 		} else {
 			throw error;
 		}
