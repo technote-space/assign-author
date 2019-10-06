@@ -148,6 +148,7 @@ const {
 	uniqueArray,
 	getBuildVersion,
 	showActionInfo,
+	getArrayInput,
 } = Utils;
 
 console.log(isRelease(context));  // e.g. true
@@ -164,6 +165,7 @@ console.log(getSender(context));  // e.g. 'octocat'
 console.log(uniqueArray([1, 2, 2, 3, 4, 3]));  // [1, 2, 3, 4]
 console.log(getBuildVersion(path.resolve(__dirname, 'build.json')));  // e.g. 'v1.2.3'
 showActionInfo(path.resolve(__dirname, '..'), new Logger(), context);
+console.log(getArrayInput('TEST'));  // e.g. ['test1', 'test2']
 ```
 
 ## Author

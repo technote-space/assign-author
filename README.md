@@ -7,7 +7,7 @@
 
 *Read this in other languages: [English](README.md), [日本語](README.ja.md).*
 
-`GitHub action` to assign author to issue or PR.  
+`GitHub Action` to assign author to issue or PR.  
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -39,7 +39,6 @@
        runs-on: ubuntu-latest
        steps:
          - name: Assign author to PR
-           if: github.event.action == 'opened'
            uses: technote-space/assign-author@v1
            with:
              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -56,7 +55,6 @@
        runs-on: ubuntu-latest
        steps:
          - name: Assign author to issue
-           if: github.event.action == 'opened'
            uses: technote-space/assign-author@v1
            with:
              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
