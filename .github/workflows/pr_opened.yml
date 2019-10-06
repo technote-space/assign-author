@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Assign Author to PR
-        uses: technote-space/assign-author@v1
+        uses: technote-space/assign-author@test/v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

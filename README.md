@@ -39,7 +39,6 @@
        runs-on: ubuntu-latest
        steps:
          - name: Assign author to PR
-           if: github.event.action == 'opened'
            uses: technote-space/assign-author@v1
            with:
              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -56,7 +55,6 @@
        runs-on: ubuntu-latest
        steps:
          - name: Assign author to issue
-           if: github.event.action == 'opened'
            uses: technote-space/assign-author@v1
            with:
              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
