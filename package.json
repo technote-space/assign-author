@@ -21,16 +21,16 @@
   "dependencies": {
     "@actions/core": "^1.2.0",
     "@actions/github": "^1.1.0",
-    "@technote-space/filter-github-action": "^0.1.5",
-    "@technote-space/github-action-helper": "^0.2.1"
+    "@technote-space/filter-github-action": "^0.1.7",
+    "@technote-space/github-action-helper": "^0.2.11"
   },
   "devDependencies": {
-    "@technote-space/github-action-test-helper": "^0.0.12",
-    "@types/jest": "^24.0.19",
+    "@technote-space/github-action-test-helper": "^0.0.17",
+    "@types/jest": "^24.0.20",
     "@types/node": "^12.11.7",
     "@typescript-eslint/eslint-plugin": "^2.5.0",
     "@typescript-eslint/parser": "^2.5.0",
-    "eslint": "^6.5.1",
+    "eslint": "^6.6.0",
     "jest": "^24.9.0",
     "jest-circus": "^24.9.0",
     "nock": "^11.6.0",
