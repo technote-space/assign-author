@@ -380,12 +380,13 @@
     "@actions/github" "^1.1.0"
     sprintf-js "^1.1.2"
 
-"@technote-space/github-action-test-helper@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@technote-space/github-action-test-helper/-/github-action-test-helper-0.0.22.tgz#a1ad9a85ebb29951b7d85beab3731738f7bfefe9"
-  integrity sha512-Atjn+D2s0wJBllfjJ3lzrVoLVU2ssbOLWD8bIA7Id2e6iOKmVCwhhmfpvNLAP9l79xlr8zQIv+kr/HzoPoSeXA==
+"@technote-space/github-action-test-helper@^0.0.24":
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/@technote-space/github-action-test-helper/-/github-action-test-helper-0.0.24.tgz#c659348513372971d0edb2d91d9e9c53faa15560"
+  integrity sha512-t7yR7nNKAHMBgigTpKI0QiHZZgS0fUmdED2fkzVOLaeGvnuNAzd6M4d7gmcIiWi7NYRYNjFAq0LkNt0vyI7u+w==
   dependencies:
     "@actions/github" "^1.1.0"
+    js-yaml "^3.13.1"
 
 "@types/babel__core@^7.1.0":
   version "7.1.3"
