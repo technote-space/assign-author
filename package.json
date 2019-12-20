@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/assign-author",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "GitHub actions to assign author to issue or PR.",
   "author": "Technote <technote.space@gmail.com> (https://technote.space)",
   "license": "MIT",
