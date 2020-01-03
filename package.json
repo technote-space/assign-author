@@ -22,18 +22,18 @@
     "@actions/core": "^1.2.0",
     "@actions/github": "^2.0.0",
     "@technote-space/filter-github-action": "^0.1.12",
-    "@technote-space/github-action-helper": "^0.6.25"
+    "@technote-space/github-action-helper": "^0.6.26"
   },
   "devDependencies": {
     "@technote-space/github-action-test-helper": "^0.0.27",
     "@types/jest": "^24.0.25",
-    "@types/node": "^13.1.1",
-    "@typescript-eslint/eslint-plugin": "^2.13.0",
-    "@typescript-eslint/parser": "^2.13.0",
+    "@types/node": "^13.1.2",
+    "@typescript-eslint/eslint-plugin": "^2.14.0",
+    "@typescript-eslint/parser": "^2.14.0",
     "eslint": "^6.8.0",
     "jest": "^24.9.0",
     "jest-circus": "^24.9.0",
-    "nock": "^11.7.0",
+    "nock": "^11.7.1",
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.4"
   },
