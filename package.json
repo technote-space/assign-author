@@ -19,17 +19,17 @@
   },
   "main": "lib/main.js",
   "dependencies": {
-    "@actions/core": "^1.2.0",
-    "@actions/github": "^2.0.0",
-    "@technote-space/filter-github-action": "^0.1.12",
-    "@technote-space/github-action-helper": "^0.6.26"
+    "@actions/core": "^1.2.1",
+    "@actions/github": "^2.0.1",
+    "@technote-space/filter-github-action": "^0.1.13",
+    "@technote-space/github-action-helper": "^0.7.0"
   },
   "devDependencies": {
-    "@technote-space/github-action-test-helper": "^0.0.27",
-    "@types/jest": "^24.0.25",
-    "@types/node": "^13.1.6",
-    "@typescript-eslint/eslint-plugin": "^2.15.0",
-    "@typescript-eslint/parser": "^2.15.0",
+    "@technote-space/github-action-test-helper": "^0.0.28",
+    "@types/jest": "^24.9.0",
+    "@types/node": "^13.1.7",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
     "eslint": "^6.8.0",
     "jest": "^24.9.0",
     "jest-circus": "^24.9.0",
