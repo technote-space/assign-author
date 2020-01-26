@@ -1,12 +1,14 @@
 on:
   schedule:
-    - cron: 0 18 * * 5
+    - cron: 0 3 * * 2,6
   pull_request:
     types: [opened, synchronize, reopened, closed]
+  repository_dispatch:
+    types: [update-deps]
 
 name: Update dependencies
 jobs:
-  release:
+  update:
     name: Update npm dependencies
     runs-on: ubuntu-latest
     steps:
@@ -14,9 +16,8 @@ jobs:
         uses: technote-space/create-pr-action@v1
         with:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          GLOBAL_INSTALL_PACKAGES: npm-check-updates
           EXECUTE_COMMANDS: |
-            ncu -u --packageFile package.json
+            npx npm-check-updates -u --packageFile package.json
             yarn install
             yarn upgrade
             yarn audit
