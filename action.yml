@@ -1,13 +1,18 @@
 name: Assign Author
+
 description: GitHub actions to assign author to issue or PR.
+
 author: technote-space
+
 inputs:
   GITHUB_TOKEN:
     description: Secret GitHub API token to use for making API requests.
     required: true
+
 branding:
   icon: 'user-plus'
   color: 'orange'
+
 runs:
   using: node12
   main: lib/main.js
