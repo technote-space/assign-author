@@ -9,7 +9,8 @@ import { addAssignees } from '../../src/utils/github';
 describe('addAssignees', () => {
 	disableNetConnect(nock);
 
-	const logger = new Logger();
+	const logger  = new Logger();
+	const octokit = new GitHub('test-token');
 
 	it('should do nothing 1', async() => {
 		const fn = jest.fn();
@@ -20,7 +21,7 @@ describe('addAssignees', () => {
 				return body;
 			});
 
-		await addAssignees(false, new GitHub(''), logger, getContext({
+		await addAssignees(false, octokit, logger, getContext({
 			repo: {
 				owner: 'hello',
 				repo: 'world',
@@ -39,7 +40,7 @@ describe('addAssignees', () => {
 				return body;
 			});
 
-		await addAssignees([], new GitHub(''), logger, getContext({
+		await addAssignees([], octokit, logger, getContext({
 			repo: {
 				owner: 'hello',
 				repo: 'world',
@@ -50,8 +51,8 @@ describe('addAssignees', () => {
 	});
 
 	it('should do nothing 3', async() => {
-		const fn1 = jest.fn();
-		const fn2 = jest.fn();
+		const fn1        = jest.fn();
+		const fn2        = jest.fn();
 		const mockStdout = spyOnStdout();
 		nock('https://api.github.com')
 			.post('/repos/hello/world/issues/1/assignees', body => {
@@ -67,7 +68,7 @@ describe('addAssignees', () => {
 
 		await addAssignees([
 			'test',
-		], new GitHub(''), logger, getContext({
+		], octokit, logger, getContext({
 			repo: {
 				owner: 'hello',
 				repo: 'world',
@@ -84,7 +85,7 @@ describe('addAssignees', () => {
 	});
 
 	it('should do nothing 4', async() => {
-		const fn = jest.fn();
+		const fn         = jest.fn();
 		const mockStdout = spyOnStdout();
 		nock('https://api.github.com')
 			.post('/repos/hello/world/issues/1/assignees', body => {
@@ -99,7 +100,7 @@ describe('addAssignees', () => {
 
 		await expect(addAssignees([
 			'test',
-		], new GitHub(''), logger, getContext({
+		], octokit, logger, getContext({
 			repo: {
 				owner: 'hello',
 				repo: 'world',
@@ -130,7 +131,7 @@ describe('addAssignees', () => {
 
 		await addAssignees([
 			'test',
-		], new GitHub(''), logger, getContext({
+		], octokit, logger, getContext({
 			repo: {
 				owner: 'hello',
 				repo: 'world',
