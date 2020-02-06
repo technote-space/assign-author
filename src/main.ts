@@ -1,17 +1,17 @@
 import path from 'path';
 import { setFailed } from '@actions/core';
-import { context, GitHub } from '@actions/github';
+import { Context } from '@actions/github/lib/context';
 import { isTargetEvent } from '@technote-space/filter-github-action';
 import { Logger, ContextHelper, Utils } from '@technote-space/github-action-helper';
-import { getAssignees } from './utils/context';
-import { addAssignees } from './utils/github';
+import { execute } from './process';
 import { TARGET_EVENTS } from './constant';
 
 /**
  * run
  */
 async function run(): Promise<void> {
-	const logger = new Logger();
+	const logger  = new Logger();
+	const context = new Context();
 	ContextHelper.showActionInfo(path.resolve(__dirname, '..'), logger, context);
 
 	if (!isTargetEvent(TARGET_EVENTS, context)) {
@@ -19,7 +19,7 @@ async function run(): Promise<void> {
 		return;
 	}
 
-	await addAssignees(getAssignees(context), new GitHub(Utils.getAccessToken(true)), logger, context);
+	await execute(logger, Utils.getOctokit(), context);
 }
 
 run().catch(error => setFailed(error.message));

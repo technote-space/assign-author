@@ -9,9 +9,12 @@
 
 `GitHub Actions` to assign author to issue or PR.  
 
+## Table of Contents
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
+<details>
+<summary>Details</summary>
 
 - [Screenshot](#screenshot)
 - [Installation](#installation)
@@ -20,6 +23,7 @@
 - [GitHub Actions using this Action](#github-actions-using-this-action)
 - [Author](#author)
 
+</details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Screenshot
@@ -85,6 +89,15 @@
 - [Package Version Check Action](https://github.com/technote-space/package-version-check-action)
   - [issue_opened.yml](https://github.com/technote-space/package-version-check-action/blob/master/.github/workflows/issue_opened.yml)
   - [pr_opened.yml](https://github.com/technote-space/package-version-check-action/blob/master/.github/workflows/pr_opened.yml)
+- [Get Diff Action](https://github.com/technote-space/get-diff-action)
+  - [issue_opened.yml](https://github.com/technote-space/get-diff-action/blob/master/.github/workflows/issue_opened.yml)
+  - [pr_opened.yml](https://github.com/technote-space/get-diff-action/blob/master/.github/workflows/pr_opened.yml)
+- [Create Project Card Action](https://github.com/technote-space/create-project-card-action)
+  - [issue_opened.yml](https://github.com/technote-space/create-project-card-action/blob/master/.github/workflows/issue_opened.yml)
+  - [pr_opened.yml](https://github.com/technote-space/create-project-card-action/blob/master/.github/workflows/pr_opened.yml)
+- [Get git comment action](https://github.com/technote-space/get-git-comment-action)
+  - [issue_opened.yml](https://github.com/technote-space/get-git-comment-action/blob/master/.github/workflows/issue_opened.yml)
+  - [pr_opened.yml](https://github.com/technote-space/get-git-comment-action/blob/master/.github/workflows/pr_opened.yml)
 
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  

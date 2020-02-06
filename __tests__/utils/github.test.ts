@@ -1,16 +1,15 @@
 /* eslint-disable no-magic-numbers */
 import nock from 'nock';
 import path from 'path';
-import { GitHub } from '@actions/github' ;
 import { Logger } from '@technote-space/github-action-helper';
-import { disableNetConnect, getApiFixture, getContext, spyOnStdout, stdoutCalledWith } from '@technote-space/github-action-test-helper';
+import { disableNetConnect, getApiFixture, getContext, spyOnStdout, stdoutCalledWith, getOctokit } from '@technote-space/github-action-test-helper';
 import { addAssignees } from '../../src/utils/github';
 
 describe('addAssignees', () => {
 	disableNetConnect(nock);
 
 	const logger  = new Logger();
-	const octokit = new GitHub('test-token');
+	const octokit = getOctokit();
 
 	it('should do nothing 1', async() => {
 		const fn = jest.fn();
@@ -63,7 +62,7 @@ describe('addAssignees', () => {
 			})
 			.reply(403, () => {
 				fn2();
-				return getApiFixture(path.resolve(__dirname, '..', 'fixtures'), 'repos.issues.assignees.403');
+				return getApiFixture(path.resolve(__dirname, '../fixtures'), 'repos.issues.assignees.403');
 			});
 
 		await addAssignees([
@@ -126,7 +125,7 @@ describe('addAssignees', () => {
 			})
 			.reply(201, () => {
 				fn2();
-				return getApiFixture(path.resolve(__dirname, '..', 'fixtures'), 'repos.issues.assignees');
+				return getApiFixture(path.resolve(__dirname, '../fixtures'), 'repos.issues.assignees');
 			});
 
 		await addAssignees([

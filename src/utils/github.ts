@@ -1,8 +1,8 @@
-import { GitHub } from '@actions/github/lib/github';
+import { Octokit } from '@octokit/rest';
 import { Context } from '@actions/github/lib/context';
 import { Logger } from '@technote-space/github-action-helper';
 
-export const addAssignees = async(assignees: string[] | false, octokit: GitHub, logger: Logger, context: Context): Promise<void> => {
+export const addAssignees = async(assignees: string[] | false, octokit: Octokit, logger: Logger, context: Context): Promise<void> => {
 	if (false === assignees) {
 		logger.warn('Invalid target.');
 		return;
