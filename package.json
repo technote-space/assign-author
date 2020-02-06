@@ -2,7 +2,11 @@
   "name": "@technote-space/assign-author",
   "version": "1.2.7",
   "description": "GitHub actions to assign author to issue or PR.",
-  "author": "Technote <technote.space@gmail.com> (https://technote.space)",
+  "author": {
+    "name": "Technote",
+    "email": "technote.space@gmail.com",
+    "url": "https://technote.space"
+  },
   "license": "MIT",
   "keywords": [
     "github",
@@ -17,7 +21,10 @@
   "bugs": {
     "url": "https://github.com/technote-space/assign-author/issues"
   },
-  "main": "lib/main.js",
+  "files": [
+    "lib",
+    "action.yml"
+  ],
   "dependencies": {
     "@actions/core": "^1.2.2",
     "@actions/github": "^2.1.0",
