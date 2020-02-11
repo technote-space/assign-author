@@ -1,9 +1,12 @@
 on: pull_request
+
 name: Pull Request updated
+
 jobs:
   triage:
     name: Pull Request Labeler
     runs-on: ubuntu-latest
+    if: "! startsWith(github.event.pull_request.head.ref, 'release/v')"
     steps:
       - name: Pull Request Labeler
         uses: actions/labeler@v2
@@ -50,4 +53,3 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           IGNORE_CONTEXT_CHECK: true
-
