@@ -6,7 +6,7 @@ jobs:
   triage:
     name: Pull Request Labeler
     runs-on: ubuntu-latest
-    if: "! startsWith(github.event.pull_request.head.ref, 'release/v')"
+    if: "! startsWith(github.event.pull_request.head.ref, 'release/')"
     steps:
       - name: Pull Request Labeler
         uses: actions/labeler@v2
