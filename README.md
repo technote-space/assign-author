@@ -20,7 +20,7 @@
 - [Installation](#installation)
 - [Action event details](#action-event-details)
   - [Target events](#target-events)
-- [GitHub Actions using this Action](#github-actions-using-this-action)
+- [Example repositories using this Action](#example-repositories-using-this-action)
 - [Author](#author)
 
 </details>
