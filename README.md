@@ -44,8 +44,6 @@
        steps:
          - name: Assign author to PR
            uses: technote-space/assign-author@v1
-           with:
-             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
    ```
    e.g. `.github/workflows/issues.yml`
    ```yaml
@@ -60,8 +58,6 @@
        steps:
          - name: Assign author to issue
            uses: technote-space/assign-author@v1
-           with:
-             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
    ```
 
 ## Action event details
