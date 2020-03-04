@@ -73,7 +73,7 @@
 |issues|opened|
 |issues|rerequested|
 
-## GitHub Actions using this Action
+## Example repositories using this Action
 - [Release GitHub Actions](https://github.com/technote-space/release-github-actions)
   - [issue-opened.yml](https://github.com/technote-space/release-github-actions/blob/master/.github/workflows/issue-opened.yml)
   - [pr-opened.yml](https://github.com/technote-space/release-github-actions/blob/master/.github/workflows/pr-opened.yml)

@@ -73,7 +73,7 @@ Issue や Pull Request に Author をアサインする GitHub Actions です。
 |issues|opened|
 |issues|rerequested|
 
-## このアクションを使用しているアクションの例
+## このアクションを使用しているリポジトリの例
 - [Release GitHub Actions](https://github.com/technote-space/release-github-actions)
   - [issue-opened.yml](https://github.com/technote-space/release-github-actions/blob/master/.github/workflows/issue-opened.yml)
   - [pr-opened.yml](https://github.com/technote-space/release-github-actions/blob/master/.github/workflows/pr-opened.yml)
