@@ -23,8 +23,6 @@ jobs:
     steps:
       - name: Assign Author to PR
         uses: technote-space/assign-author@gh-actions
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   addLabelsByBranch:
     name: PR Labeler
