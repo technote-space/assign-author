@@ -29,7 +29,7 @@
     "@actions/core": "^1.2.3",
     "@actions/github": "^2.1.1",
     "@technote-space/filter-github-action": "^0.2.5",
-    "@technote-space/github-action-helper": "^1.3.0"
+    "@technote-space/github-action-helper": "^1.3.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
