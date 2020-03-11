@@ -9,6 +9,9 @@ jobs:
     env:
       LINT: 1
     steps:
+      - uses: technote-space/auto-cancel-redundant-job@v1
+        with:
+          EXCLUDE_MERGED: 'true'
       - name: Set running flag
         run: echo "::set-env name=RUNNING::1"
       - uses: actions/checkout@v2
@@ -141,8 +144,9 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Release GitHub Actions
-        uses: technote-space/release-github-actions@v3
+        uses: technote-space/release-github-actions@v4
         with:
+          BRANCH_NAME: 'releases/${MAJOR}, gh-actions'
           OUTPUT_BUILD_INFO_FILENAME: build.json
           TEST_TAG_PREFIX: test/
           ORIGINAL_TAG_PREFIX: original/
