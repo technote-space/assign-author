@@ -65,9 +65,9 @@
 | eventName | action |
 |:---:|:---:|
 |pull_request|opened|
-|pull_request|rerequested|
+|pull_request|reopened|
 |issues|opened|
-|issues|rerequested|
+|issues|reopened|
 
 ## Example repositories using this Action
 - [Release GitHub Actions](https://github.com/technote-space/release-github-actions)
