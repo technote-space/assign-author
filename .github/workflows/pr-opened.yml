@@ -29,4 +29,4 @@ jobs:
     name: PR Labeler
     runs-on: ubuntu-latest
     steps:
-      - uses: technote-space/pr-labeler-action@v3
+      - uses: technote-space/pr-labeler-action@v4
