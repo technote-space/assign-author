@@ -1,33 +1,33 @@
-import { Octokit } from '@octokit/rest';
-import { Context } from '@actions/github/lib/context';
-import { Logger } from '@technote-space/github-action-helper';
+import {Octokit} from '@octokit/rest';
+import {Context} from '@actions/github/lib/context';
+import {Logger} from '@technote-space/github-action-helper';
 
 export const addAssignees = async(assignees: string[] | false, octokit: Octokit, logger: Logger, context: Context): Promise<void> => {
-	if (false === assignees) {
-		logger.warn('Invalid target.');
-		return;
-	}
+  if (false === assignees) {
+    logger.warn('Invalid target.');
+    return;
+  }
 
-	logger.info('Adding assignees');
-	logger.info(assignees);
+  logger.info('Adding assignees');
+  logger.info(assignees);
 
-	if (!assignees.length) {
-		logger.info('do nothing...');
-		return;
-	}
+  if (!assignees.length) {
+    logger.info('do nothing...');
+    return;
+  }
 
-	try {
-		await octokit.issues.addAssignees({
-			owner: context.repo.owner,
-			repo: context.repo.repo,
-			'issue_number': context.issue.number,
-			assignees: assignees,
-		});
-	} catch (error) {
-		if ('Resource not accessible by integration' === error.message) {
-			logger.warn(error.message);
-		} else {
-			throw error;
-		}
-	}
+  try {
+    await octokit.issues.addAssignees({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      'issue_number': context.issue.number,
+      assignees: assignees,
+    });
+  } catch (error) {
+    if ('Resource not accessible by integration' === error.message) {
+      logger.warn(error.message);
+    } else {
+      throw error;
+    }
+  }
 };
