@@ -1,4 +1,4 @@
-import {Octokit} from '@octokit/rest';
+import {Octokit} from '@technote-space/github-action-helper/dist/types';
 import {Context} from '@actions/github/lib/context';
 import {Logger} from '@technote-space/github-action-helper';
 

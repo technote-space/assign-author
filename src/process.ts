@@ -1,5 +1,5 @@
 import {Context} from '@actions/github/lib/context';
-import {Octokit} from '@octokit/rest';
+import {Octokit} from '@technote-space/github-action-helper/dist/types';
 import {Logger} from '@technote-space/github-action-helper';
 import {getAssignees} from './utils/context';
 import {addAssignees} from './utils/github';
