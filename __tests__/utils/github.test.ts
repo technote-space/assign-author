@@ -93,9 +93,7 @@ describe('addAssignees', () => {
         expect(body.assignees).toEqual(['test']);
         return body;
       })
-      .reply(500, () => {
-        throw new Error('test');
-      });
+      .reply(500, 'test');
 
     await expect(addAssignees([
       'test',
