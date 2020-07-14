@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/assign-author",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "GitHub actions to assign author to issue or PR.",
   "author": {
     "name": "Technote",
