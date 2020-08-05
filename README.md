@@ -64,10 +64,8 @@
 ### Target events
 | eventName | action |
 |:---:|:---:|
-|pull_request|opened|
-|pull_request|reopened|
-|issues|opened|
-|issues|reopened|
+|pull_request, pull_request_target|opened, reopened|
+|issues|opened, reopened|
 
 ## Example repositories using this Action
 - [Release GitHub Actions](https://github.com/technote-space/release-github-actions)
