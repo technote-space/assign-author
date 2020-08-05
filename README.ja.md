@@ -64,10 +64,8 @@ Issue や Pull Request に Author をアサインする GitHub Actions です。
 ### 対象イベント
 | eventName | action |
 |:---:|:---:|
-|pull_request|opened|
-|pull_request|reopened|
-|issues|opened|
-|issues|reopened|
+|pull_request, pull_request_target|opened, reopened|
+|issues|opened, reopened|
 
 ## このアクションを使用しているリポジトリの例
 - [Release GitHub Actions](https://github.com/technote-space/release-github-actions)
