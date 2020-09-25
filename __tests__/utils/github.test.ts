@@ -1,7 +1,7 @@
 /* eslint-disable no-magic-numbers */
 import nock from 'nock';
 import path from 'path';
-import {Logger} from '@technote-space/github-action-helper';
+import {Logger} from '@technote-space/github-action-log-helper';
 import {disableNetConnect, getApiFixture, getContext, spyOnStdout, stdoutCalledWith, getOctokit} from '@technote-space/github-action-test-helper';
 import {addAssignees} from '../../src/utils/github';
 
