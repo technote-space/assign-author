@@ -31,6 +31,18 @@ describe('getAssignees', () => {
         },
       },
     }))).toEqual(['test']);
+    expect(getAssignees(getContext({
+      eventName: 'pull_request_target',
+      payload: {
+        sender: {
+          type: 'User',
+          login: 'test',
+        },
+        'pull_request': {
+          assignees: [],
+        },
+      },
+    }))).toEqual(['test']);
   });
 
   it('should empty 1', () => {
