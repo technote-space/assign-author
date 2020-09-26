@@ -6,7 +6,7 @@ const getCurrentAssignees = (context: Context): string[] | false => {
     return context.payload.issue && 'assignees' in context.payload.issue ? context.payload.issue.assignees.map(assignee => assignee.login) : false;
   }
 
-  if ('pull_request' === context.eventName) {
+  if ('pull_request' === context.eventName || 'pull_request_target' === context.eventName) {
     return context.payload.pull_request && 'assignees' in context.payload.pull_request ? context.payload.pull_request.assignees.map(assignee => assignee.login) : false;
   }
 
