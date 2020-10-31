@@ -37,14 +37,14 @@
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
-    "@technote-space/filter-github-action": "^0.5.5",
-    "@technote-space/github-action-helper": "^4.0.4",
-    "@technote-space/github-action-log-helper": "^0.1.5"
+    "@technote-space/filter-github-action": "^0.5.6",
+    "@technote-space/github-action-helper": "^4.0.5",
+    "@technote-space/github-action-log-helper": "^0.1.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@technote-space/github-action-test-helper": "^0.6.1",
+    "@technote-space/github-action-test-helper": "^0.6.2",
     "@technote-space/release-github-actions-cli": "^1.7.1",
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.6",
