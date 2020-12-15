@@ -798,30 +798,30 @@
     "@actions/core" "^1.2.6"
     sprintf-js "^1.1.2"
 
-"@technote-space/github-action-test-helper@^0.6.6":
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/@technote-space/github-action-test-helper/-/github-action-test-helper-0.6.6.tgz#a00b614c6ee6f84e0cb0c624ea85cc276bb258a9"
-  integrity sha512-bA7crwtCru5+NQxbaTUepEsRUwXLQBXLRuI9gSg8I62DaGMobpQ5z2FimjDPXaJaDbo0gfgvJYbU+s9/3LN4/A==
+"@technote-space/github-action-test-helper@^0.6.7":
+  version "0.6.7"
+  resolved "https://registry.yarnpkg.com/@technote-space/github-action-test-helper/-/github-action-test-helper-0.6.7.tgz#99db2d0422fd81930eb644bbc2d6ccd2d6410ea4"
+  integrity sha512-gknkH9AjwV2jTu+6ybVSog5fmVJ55qdRgJSxbDHQCwEbMsK0/NpcRjWe05ee0yfp/wtqQicgjRj1Lmn3Nl+EYA==
   dependencies:
     "@actions/core" "^1.2.6"
     "@actions/github" "^4.0.0"
     "@octokit/plugin-rest-endpoint-methods" "^4.4.1"
     js-yaml "^3.14.1"
 
-"@technote-space/release-github-actions-cli@^1.7.3":
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/@technote-space/release-github-actions-cli/-/release-github-actions-cli-1.7.3.tgz#01377e7e4b666120e795c9101a6efe68e06d0d89"
-  integrity sha512-t9KLcsFDPO1catciokX7T1yom+PStBG6kyDhXziVWPDPlW8s4cde7C7o1XOa/8a9KDvU9EHHHQvt0RaEqqrQBg==
+"@technote-space/release-github-actions-cli@^1.7.4":
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/@technote-space/release-github-actions-cli/-/release-github-actions-cli-1.7.4.tgz#65e1decf6d5b033ea6eeddddf551958e2a6426af"
+  integrity sha512-e/S8SxShyo3wtNnA2ggBGEy4ezME7iaX8kEHSot7PvBaykXmlh2ox142Nlo+DIjlSA40IwxrRMXrvEa51t1MhQ==
   dependencies:
     "@technote-space/github-action-helper" "^4.4.4"
-    "@technote-space/github-action-log-helper" "^0.1.9"
-    "@technote-space/release-github-actions" "^6.2.5"
+    "@technote-space/github-action-log-helper" "^0.1.10"
+    "@technote-space/release-github-actions" "^6.2.6"
     commander "^6.2.0"
     cosmiconfig "^7.0.0"
     dotenv "^8.2.0"
-    js-yaml "^3.14.0"
+    js-yaml "^3.14.1"
 
-"@technote-space/release-github-actions@^6.2.5":
+"@technote-space/release-github-actions@^6.2.6":
   version "6.2.6"
   resolved "https://registry.yarnpkg.com/@technote-space/release-github-actions/-/release-github-actions-6.2.6.tgz#3ff406e1ada82eac6c94d16de2000d3ed3702aa2"
   integrity sha512-hqYAerA6mlUUPF58e+Twzn53KieeBXveAuddcdBiKZ8ZfJKBNKOARVWMfAc2Jdfc+VpuROdebC90w7IV5fbYsw==
@@ -3236,7 +3236,7 @@ js-tokens@^4.0.0:
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
-js-yaml@^3.13.1, js-yaml@^3.14.0, js-yaml@^3.14.1:
+js-yaml@^3.13.1, js-yaml@^3.14.1:
   version "3.14.1"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.14.1.tgz#dae812fdb3825fa306609a8717383c50c36a0537"
   integrity sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==
