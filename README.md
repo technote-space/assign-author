@@ -7,7 +7,7 @@
 
 *Read this in other languages: [English](README.md), [日本語](README.ja.md).*
 
-`GitHub Actions` to assign author to issue or PR.  
+`GitHub Actions` to assign author to issue or PR.   
 
 ## Table of Contents
 
