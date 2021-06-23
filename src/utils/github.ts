@@ -17,7 +17,7 @@ export const addAssignees = async(assignees: string[] | false, octokit: Octokit,
   }
 
   try {
-    await octokit.issues.addAssignees({
+    await octokit.rest.issues.addAssignees({
       owner: context.repo.owner,
       repo: context.repo.repo,
       'issue_number': context.issue.number,
