@@ -2169,6 +2169,30 @@ export interface paths {
      */
     get: operations["issues/check-user-can-be-assigned"];
   };
+  "/repos/{owner}/{repo}/autolinks": {
+    /**
+     * This returns a list of autolinks configured for the given repository.
+     *
+     * Information about autolinks are only available to repository administrators.
+     */
+    get: operations["repos/list-autolinks"];
+    /** Users with admin access to the repository can create an autolink. */
+    post: operations["repos/create-autolink"];
+  };
+  "/repos/{owner}/{repo}/autolinks/{autolink_id}": {
+    /**
+     * This returns a single autolink reference by ID that was configured for the given repository.
+     *
+     * Information about autolinks are only available to repository administrators.
+     */
+    get: operations["repos/get-autolink"];
+    /**
+     * This deletes a single autolink reference by ID that was configured for the given repository.
+     *
+     * Information about autolinks are only available to repository administrators.
+     */
+    delete: operations["repos/delete-autolink"];
+  };
   "/repos/{owner}/{repo}/automated-security-fixes": {
     /** Enables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://help.github.com/en/articles/configuring-automated-security-fixes)". */
     put: operations["repos/enable-automated-security-fixes"];
@@ -7666,6 +7690,14 @@ export interface components {
         };
       };
     };
+    /** An autolink reference. */
+    autolink: {
+      id: number;
+      /** The prefix of a key that is linkified. */
+      key_prefix: string;
+      /** A template for the target URL that is generated if a key was found. */
+      url_template: string;
+    };
     /** Protected Branch Admin Enforced */
     "protected-branch-admin-enforced": {
       url: string;
@@ -11111,6 +11143,8 @@ export interface components {
     "run-id": number;
     /** The ID of the workflow. You can also pass the workflow file name as a string. */
     "workflow-id": number | string;
+    /** autolink_id parameter */
+    "autolink-id": number;
     /** The name of the branch. */
     branch: string;
     /** check_run_id parameter */
@@ -19821,6 +19855,106 @@ export interface operations {
           "application/json": components["schemas"]["basic-error"];
         };
       };
+    };
+  };
+  /**
+   * This returns a list of autolinks configured for the given repository.
+   *
+   * Information about autolinks are only available to repository administrators.
+   */
+  "repos/list-autolinks": {
+    parameters: {
+      path: {
+        owner: components["parameters"]["owner"];
+        repo: components["parameters"]["repo"];
+      };
+      query: {
+        /** Page number of the results to fetch. */
+        page?: components["parameters"]["page"];
+      };
+    };
+    responses: {
+      /** Response */
+      200: {
+        content: {
+          "application/json": components["schemas"]["autolink"][];
+        };
+      };
+    };
+  };
+  /** Users with admin access to the repository can create an autolink. */
+  "repos/create-autolink": {
+    parameters: {
+      path: {
+        owner: components["parameters"]["owner"];
+        repo: components["parameters"]["repo"];
+      };
+    };
+    responses: {
+      /** response */
+      201: {
+        headers: {
+          Location?: string;
+        };
+        content: {
+          "application/json": components["schemas"]["autolink"];
+        };
+      };
+      422: components["responses"]["validation_failed"];
+    };
+    requestBody: {
+      content: {
+        "application/json": {
+          /** The prefix appended by a number will generate a link any time it is found in an issue, pull request, or commit. */
+          key_prefix: string;
+          /** The URL must contain <num> for the reference number. */
+          url_template: string;
+        };
+      };
+    };
+  };
+  /**
+   * This returns a single autolink reference by ID that was configured for the given repository.
+   *
+   * Information about autolinks are only available to repository administrators.
+   */
+  "repos/get-autolink": {
+    parameters: {
+      path: {
+        owner: components["parameters"]["owner"];
+        repo: components["parameters"]["repo"];
+        /** autolink_id parameter */
+        autolink_id: components["parameters"]["autolink-id"];
+      };
+    };
+    responses: {
+      /** Response */
+      200: {
+        content: {
+          "application/json": components["schemas"]["autolink"];
+        };
+      };
+      404: components["responses"]["not_found"];
+    };
+  };
+  /**
+   * This deletes a single autolink reference by ID that was configured for the given repository.
+   *
+   * Information about autolinks are only available to repository administrators.
+   */
+  "repos/delete-autolink": {
+    parameters: {
+      path: {
+        owner: components["parameters"]["owner"];
+        repo: components["parameters"]["repo"];
+        /** autolink_id parameter */
+        autolink_id: components["parameters"]["autolink-id"];
+      };
+    };
+    responses: {
+      /** Response */
+      204: never;
+      404: components["responses"]["not_found"];
     };
   };
   /** Enables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://help.github.com/en/articles/configuring-automated-security-fixes)". */
