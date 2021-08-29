@@ -20,7 +20,6 @@
 - [Installation](#installation)
 - [Action event details](#action-event-details)
   - [Target events](#target-events)
-- [Example repositories using this Action](#example-repositories-using-this-action)
 - [Author](#author)
 
 </details>
