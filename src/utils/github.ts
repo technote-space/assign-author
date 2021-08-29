@@ -23,7 +23,7 @@ export const addAssignees = async(assignees: string[] | false, octokit: Octokit,
       'issue_number': context.issue.number,
       assignees: assignees,
     });
-  } catch (error) {
+  } catch (error: any) { // eslint-disable-line @typescript-eslint/no-explicit-any
     if ('Resource not accessible by integration' === error.message) {
       logger.warn(error.message);
     } else {
