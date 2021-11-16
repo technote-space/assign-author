@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/assign-author",
-  "version": "1.5.14",
+  "version": "1.5.15",
   "description": "GitHub actions to assign author to issue or PR.",
   "keywords": [
     "github",
@@ -28,12 +28,12 @@
   "scripts": {
     "build": "tsc",
     "cover": "jest --coverage",
+    "postinstall": "[ -n \"$CI\" ] || [ ! -f node_modules/.bin/husky ] || husky install",
     "lint": "eslint 'src/**/*.ts' '__tests__/**/*.ts' --cache",
     "lint:fix": "eslint --fix 'src/**/*.ts' '__tests__/**/*.ts'",
     "release": "yarn release-ga --test",
     "test": "yarn lint && yarn cover",
-    "update": "npm_config_yes=true npx npm-check-updates -u --timeout 100000 && yarn install && yarn upgrade && yarn audit",
-    "postinstall": "[ -n \"$CI\" ] || [ ! -f node_modules/.bin/husky ] || husky install"
+    "update": "npm_config_yes=true npx npm-check-updates -u --timeout 100000 && yarn install && yarn upgrade && yarn audit"
   },
   "dependencies": {
     "@actions/core": "^1.6.0",
