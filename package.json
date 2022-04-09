@@ -40,7 +40,7 @@
     "@actions/github": "^5.0.1",
     "@technote-space/filter-github-action": "^0.5.62",
     "@technote-space/github-action-helper": "^5.2.28",
-    "@technote-space/github-action-log-helper": "^0.1.51"
+    "@technote-space/github-action-log-helper": "^0.1.52"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
@@ -51,7 +51,7 @@
     "@types/node": "^17.0.23",
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
-    "eslint": "^8.12.0",
+    "eslint": "^8.13.0",
     "husky": "^7.0.4",
     "jest": "^27.5.1",
     "jest-circus": "^27.5.1",
