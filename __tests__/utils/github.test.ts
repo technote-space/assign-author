@@ -1,4 +1,5 @@
 /* eslint-disable no-magic-numbers */
+import { describe, expect, it, vi } from 'vitest';
 import nock from 'nock';
 import path from 'path';
 import {Logger} from '@technote-space/github-action-log-helper';
@@ -12,7 +13,7 @@ describe('addAssignees', () => {
   const octokit = getOctokit();
 
   it('should do nothing 1', async() => {
-    const fn = jest.fn();
+    const fn = vi.fn();
     nock('https://api.github.com')
       .post('/repos/hello/world/issues/1/assignees')
       .reply(200, (uri, body) => {
@@ -31,7 +32,7 @@ describe('addAssignees', () => {
   });
 
   it('should do nothing 2', async() => {
-    const fn = jest.fn();
+    const fn = vi.fn();
     nock('https://api.github.com')
       .post('/repos/hello/world/issues/1/assignees')
       .reply(200, (uri, body) => {
@@ -50,8 +51,8 @@ describe('addAssignees', () => {
   });
 
   it('should do nothing 3', async() => {
-    const fn1        = jest.fn();
-    const fn2        = jest.fn();
+    const fn1        = vi.fn();
+    const fn2        = vi.fn();
     const mockStdout = spyOnStdout();
     nock('https://api.github.com')
       .post('/repos/hello/world/issues/1/assignees', body => {
@@ -84,7 +85,7 @@ describe('addAssignees', () => {
   });
 
   it('should do nothing 4', async() => {
-    const fn         = jest.fn();
+    const fn         = vi.fn();
     const mockStdout = spyOnStdout();
     nock('https://api.github.com')
       .post('/repos/hello/world/issues/1/assignees', body => {
@@ -112,8 +113,8 @@ describe('addAssignees', () => {
   });
 
   it('should add assignees', async() => {
-    const fn1 = jest.fn();
-    const fn2 = jest.fn();
+    const fn1 = vi.fn();
+    const fn2 = vi.fn();
     nock('https://api.github.com')
       .post('/repos/hello/world/issues/1/assignees', body => {
         fn1();

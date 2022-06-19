@@ -1,4 +1,5 @@
 /* eslint-disable no-magic-numbers */
+import { describe, expect, it } from 'vitest';
 import {getContext} from '@technote-space/github-action-test-helper';
 import {getAssignees} from '../../src/utils/context';
 

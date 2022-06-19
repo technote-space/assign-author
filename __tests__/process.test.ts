@@ -1,4 +1,5 @@
 /* eslint-disable no-magic-numbers */
+import { describe, expect, it, vi } from 'vitest';
 import nock from 'nock';
 import path from 'path';
 import {Logger} from '@technote-space/github-action-log-helper';
@@ -12,8 +13,8 @@ describe('execute', () => {
   const octokit = getOctokit();
 
   it('should add assignees', async() => {
-    const fn1 = jest.fn();
-    const fn2 = jest.fn();
+    const fn1 = vi.fn();
+    const fn2 = vi.fn();
     nock('https://api.github.com')
       .post('/repos/hello/world/issues/1/assignees', body => {
         fn1();
