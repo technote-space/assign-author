@@ -1,9 +1,9 @@
 /* eslint-disable no-magic-numbers */
-import { describe, expect, it, vi } from 'vitest';
-import nock from 'nock';
 import path from 'path';
 import { Logger } from '@technote-space/github-action-log-helper';
 import { disableNetConnect, getApiFixture, getContext, getOctokit } from '@technote-space/github-action-test-helper';
+import nock from 'nock';
+import { describe, expect, it, vi } from 'vitest';
 import { execute } from './process';
 
 describe('execute', () => {
