@@ -1,5 +1,5 @@
-import {Context} from '@actions/github/lib/context';
-import {ContextHelper} from '@technote-space/github-action-helper';
+import { Context } from '@actions/github/lib/context';
+import { ContextHelper } from '@technote-space/github-action-helper';
 
 const getCurrentAssignees = (context: Context): string[] | false => {
   if ('issues' === context.eventName) {
