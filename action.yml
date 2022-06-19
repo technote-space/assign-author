@@ -8,12 +8,12 @@ inputs:
   GITHUB_TOKEN:
     description: Secret GitHub API token to use for making API requests.
     default: ${{ github.token }}
-    required: true
+    required: false
 
 branding:
   icon: 'user-plus'
   color: 'orange'
 
 runs:
-  using: node12
+  using: node16
   main: lib/main.js

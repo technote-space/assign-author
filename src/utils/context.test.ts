@@ -1,6 +1,7 @@
 /* eslint-disable no-magic-numbers */
-import {getContext} from '@technote-space/github-action-test-helper';
-import {getAssignees} from '../../src/utils/context';
+import { getContext } from '@technote-space/github-action-test-helper';
+import { describe, expect, it } from 'vitest';
+import { getAssignees } from './context';
 
 describe('getAssignees', () => {
   it('should get issue assignees', () => {
@@ -55,8 +56,8 @@ describe('getAssignees', () => {
         },
         issue: {
           assignees: [
-            {login: 'test'},
-            {login: 'test2'},
+            { login: 'test' },
+            { login: 'test2' },
           ],
         },
       },
@@ -73,8 +74,8 @@ describe('getAssignees', () => {
         },
         'pull_request': {
           assignees: [
-            {login: 'test'},
-            {login: 'test2'},
+            { login: 'test' },
+            { login: 'test2' },
           ],
         },
       },

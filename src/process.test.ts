@@ -1,9 +1,10 @@
 /* eslint-disable no-magic-numbers */
-import nock from 'nock';
 import path from 'path';
-import {Logger} from '@technote-space/github-action-log-helper';
-import {disableNetConnect, getApiFixture, getContext, getOctokit} from '@technote-space/github-action-test-helper';
-import {execute} from '../src/process';
+import { Logger } from '@technote-space/github-action-log-helper';
+import { disableNetConnect, getApiFixture, getContext, getOctokit } from '@technote-space/github-action-test-helper';
+import nock from 'nock';
+import { describe, expect, it, vi } from 'vitest';
+import { execute } from './process';
 
 describe('execute', () => {
   disableNetConnect(nock);
@@ -12,8 +13,8 @@ describe('execute', () => {
   const octokit = getOctokit();
 
   it('should add assignees', async() => {
-    const fn1 = jest.fn();
-    const fn2 = jest.fn();
+    const fn1 = vi.fn();
+    const fn2 = vi.fn();
     nock('https://api.github.com')
       .post('/repos/hello/world/issues/1/assignees', body => {
         fn1();
