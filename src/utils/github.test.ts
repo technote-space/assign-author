@@ -16,7 +16,7 @@ describe('addAssignees', () => {
     const fn = vi.fn();
     nock('https://api.github.com')
       .post('/repos/hello/world/issues/1/assignees')
-      .reply(200, (uri, body) => {
+      .reply(200, (_, body) => {
         fn();
         return body;
       });
@@ -35,7 +35,7 @@ describe('addAssignees', () => {
     const fn = vi.fn();
     nock('https://api.github.com')
       .post('/repos/hello/world/issues/1/assignees')
-      .reply(200, (uri, body) => {
+      .reply(200, (_, body) => {
         fn();
         return body;
       });
