@@ -35,10 +35,10 @@
    on:
      pull_request:
        types: [opened]
-   name: Pull Request
    permissions:
-       contents: none
-       pull-requests: write
+     contents: none
+     pull-requests: write
+   name: Pull Request
    jobs:
      assignAuthor:
        name: Assign author to PR
@@ -53,8 +53,8 @@
      issues:
        types: [opened]
    permissions:
-       contents: none
-       issues: write
+     contents: none
+     issues: write
    name: Issues
    jobs:
      assignAuthor:
