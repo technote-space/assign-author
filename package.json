@@ -51,18 +51,18 @@
     "@technote-space/github-action-log-helper": "^0.2.11",
     "@technote-space/github-action-test-helper": "^0.11.3",
     "@technote-space/release-github-actions-cli": "^1.9.5",
-    "@types/node": "^18.15.3",
-    "@typescript-eslint/eslint-plugin": "^5.55.0",
-    "@typescript-eslint/parser": "^5.55.0",
-    "@vitest/coverage-c8": "^0.29.3",
+    "@types/node": "^18.15.5",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "@vitest/coverage-c8": "^0.29.7",
     "eslint": "^8.36.0",
     "eslint-plugin-import": "^2.27.5",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "nock": "^13.3.0",
-    "rollup": "^3.19.1",
+    "rollup": "^3.20.0",
     "typescript": "^5.0.2",
-    "vitest": "^0.29.3"
+    "vitest": "^0.29.7"
   },
   "publishConfig": {
     "access": "public"
