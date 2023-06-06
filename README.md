@@ -35,6 +35,9 @@
    on:
      pull_request:
        types: [opened]
+   permissions:
+     contents: none
+     pull-requests: write
    name: Pull Request
    jobs:
      assignAuthor:
@@ -49,6 +52,9 @@
    on:
      issues:
        types: [opened]
+   permissions:
+     contents: none
+     issues: write
    name: Issues
    jobs:
      assignAuthor:
