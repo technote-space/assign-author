@@ -51,7 +51,7 @@
     "@technote-space/github-action-log-helper": "^0.2.19",
     "@technote-space/github-action-test-helper": "^0.11.17",
     "@technote-space/release-github-actions-cli": "^1.9.5",
-    "@types/node": "^20.5.7",
+    "@types/node": "^20.5.8",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
     "@typescript-eslint/parser": "^6.5.0",
     "@vitest/coverage-c8": "^0.33.0",
